@@ -1,5 +1,4 @@
 
-require 'rubygems'
 require 'sinatra'
 
 configure do
@@ -27,4 +26,3 @@ post '/login' do
   session[:identity] = params['identity']
   redirect to '/'
 end
-
