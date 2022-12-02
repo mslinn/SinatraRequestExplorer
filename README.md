@@ -10,8 +10,11 @@ A sample web project using ruby sinatra.
 # Getting started in Ubuntu
 
 ```
+$ sudo apt install rerun
+
 $ bundle install
-$ ruby main.rb
+
+$ rerun ruby main.rb
 ````
 
 Point your web browser to http://localhost:4567.
