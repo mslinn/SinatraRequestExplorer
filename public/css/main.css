@@ -1,3 +1,7 @@
+li, p {
+  line-height: 1.5;
+}
+
 .rounded {
   border: 1px solid;
   border-radius: 7px;
