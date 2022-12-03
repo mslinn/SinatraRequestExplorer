@@ -1,7 +1,7 @@
 #!/bin/bash
 
-URL=http://localhost:9876/data
+URL=http://localhost:9876/dump
 
-curl -d "param1=value1&param2=value2" -X POST $URL
-curl -d "param3=value3&param4=value4" -H "Content-Type: application/x-www-form-urlencoded" -X $URL
+curl -d "param1=value1&param2=value2" -X POST "$URL"
+curl -d "param3=value3&param4=value4" -H "Content-Type: application/x-www-form-urlencoded" -X POST "$URL"
 curl -d '{"key5":"value5", "key6":"value6"}' -H "Content-Type: application/json" -X POST $URL
