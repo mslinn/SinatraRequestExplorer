@@ -3,5 +3,6 @@
 URL=http://localhost:9876/dump
 
 curl -d "param1=value1&param2=value2" -X POST "$URL"
-curl -d '{"param3":"value3", "param4":"value4"}' -H "Content-Type: application/json" -X POST $URL
+curl -d '{"param3":"value3", "param4":"value4"}' \
+  -H "Content-Type: application/json" -X POST $URL
 curl -d "param1=value1&param2=value2" -X POST "$URL?x=y&a=b"
