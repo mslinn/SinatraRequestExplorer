@@ -1,6 +1,8 @@
 # Sample Sinatra Webapp
 
-A sample web application using ruby Sinatra.
+An exploratory web application using ruby Sinatra which dumps request parameters.
+This is useful when integrating services.
+
 
 # Getting started
 ## Native Ubuntu
@@ -22,5 +24,5 @@ $ ruby main.rb
 ````
 
 ## All platforms
-1. Point your web browser to http://localhost:4567
+1. Point your web browser to http://localhost:9876
 2. Run `./test`
