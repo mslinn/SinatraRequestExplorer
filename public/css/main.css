@@ -1,4 +1,12 @@
-li, p {
+form {
+  margin-block-end: 5px;
+}
+
+li {
+  line-height: 2;
+}
+
+p {
   line-height: 1.5;
 }
 
@@ -19,6 +27,7 @@ li, p {
 }
 
 .frank {
-  width: 150px;
+  width: 250px;
   height: auto;
+  margin-bottom: 1em;
 }
