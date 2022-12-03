@@ -1,4 +1,4 @@
-# Sample Sinatra Webapp
+# Sinatra Request Explorer
 
 An exploratory web application using ruby Sinatra which dumps request parameters.
 This is useful when integrating services.
