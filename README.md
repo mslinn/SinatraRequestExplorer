@@ -14,7 +14,7 @@ $ rerun ruby main.rb
 ````
 
 ## WSL / WSL2
-
+`Rerun` does not work without the full Linux machinery.
 ```
 $ bundle install
 
@@ -22,5 +22,5 @@ $ ruby main.rb
 ````
 
 ## All platforms
-Point your web browser to http://localhost:4567.
-Run `test`.
+1. Point your web browser to http://localhost:4567
+2. Run `./test`
