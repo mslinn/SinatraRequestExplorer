@@ -7,12 +7,12 @@
 # Chrome defaults to Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
 # See https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation/List_of_default_Accept_values
 
+shopt -s expand_aliases
+alias curl='curl -L --silent --show-error'
+
 function label {
   printf "\n\n=== $@ ===\n"
 }
-
-shopt -s expand_aliases
-alias curl='curl -L --silent --show-error'
 
 URL=http://localhost:9876/dump
 
