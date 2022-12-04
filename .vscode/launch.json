@@ -5,16 +5,11 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "type": "rdbg",
-      "name": "Debug main.rb with rdbg",
+      "cwd": "${workspaceRoot}",
+      "name": "Debug main.rb",
+      "program": "${workspaceRoot}/main.rb",
       "request": "launch",
-      "script": "main.rb",
-      "args": []
-    },
-    {
-      "type": "rdbg",
-      "name": "Attach with rdbg",
-      "request": "attach"
+      "type": "Ruby",
     }
   ]
 }
