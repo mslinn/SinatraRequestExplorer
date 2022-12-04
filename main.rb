@@ -1,19 +1,22 @@
+# frozen_string_literal: true
+
 require 'erb'
 require 'sinatra'
 
 set :port, 9876
-
-def before(value, test)
-  pos1 = value.index(test)
-  return value if pos1 == nil
-  value[0, pos1]
-end
 
 def accepts(request)
   request.accept
          .map(&:entry)
          .map { |x| before(x, ';') }
          .sort
+end
+
+def before(value, test)
+  pos1 = value.index(test)
+  return value if pos1.nil?
+
+  value[0, pos1]
 end
 
 def dump_array(value)
@@ -24,8 +27,8 @@ def dump_list(value)
   value.map { |k| "\n  #{k}" }.join(' ')
 end
 
-def dump(request, method, accept="plain")
-  content_type (accept="json" ? 'application/json' : 'text/plain')
+def dump(request, method, accept)
+  content_type (accept == 'json' ? 'application/json' : 'text/plain')
   <<~HEREDOC
     Method: #{method}
     Content-Type: #{accept}
@@ -48,7 +51,7 @@ get '/' do
 end
 
 get '/dump/?' do
-  dump request, 'GET'
+  dump request, 'GET', 'plain'
 end
 
 post '/dump/?' do
