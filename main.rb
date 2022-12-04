@@ -30,11 +30,8 @@ end
 def dump(request, method, accept)
   content_type (accept == 'json' ? 'application/json' : 'text/plain')
   <<~HEREDOC
-    Method: #{method}
-    Content-Type: #{accept}
-
     HTTP_USER_AGENT=#{request.env['HTTP_USER_AGENT']}
-
+    Method: #{method}
     request.accept:#{dump_list accepts(request)}
 
     request.url=#{request.url}
@@ -42,6 +39,8 @@ def dump(request, method, accept)
     request.path_info=#{request.path_info}
 
     request.params:#{dump_array request.params}
+
+    Computed Content-Type: #{accept}
   HEREDOC
 end
 
