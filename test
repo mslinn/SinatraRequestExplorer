@@ -1,26 +1,32 @@
 #!/bin/bash
 
-# Curl, and most browsers, default to Content-Type: application/x-www-form-urlencoded for a POST.
-# Get requests should not specify Content-type because they do not have request entity (that is, a body)
+# Curl, and most browsers, default to sending Content-Type: application/x-www-form-urlencoded for a POST.
+# Get requests should not specify Content-type because they do not have a body.
 
-# Curl defaults to Accept: */*, however each browser has a slightly different default value.
+# Curl defaults to Accept: */*, however each browser defaults to a different default value.
 # Chrome defaults to Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
 # See https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation/List_of_default_Accept_values
 
 URL=http://localhost:9876/dump
 
+# Send GET, accept any type of response
 curl "$URL?a=b&c=d"
 
+# Send GET, expect a JSON response
 curl -H "Accept: application/json" "$URL?a=b&c=d"
 
+# Send POST, accept any type of response
 curl -d "param1=value1&param2=value2" -X POST "$URL"
 
+# Send POST with a form-urlencoded body and a query string, accept any type of response
 curl -d "param1=value1&param2=value2" -X POST "$URL?a=b&c=d"
 
+# Send POST with a form-urlencoded body, expect a JSON response
 curl -d "param1=value1&param2=value2" \
   -H "Accept: application/json" \
   -X POST $URL
 
+# Send POST with a JSON body, expect a JSON response
 curl -d '{"param3":"value3", "param4":"value4"}' \
   -H "Accept: application/json" \
   -H "Content-Type: application/json" \
